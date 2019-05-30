@@ -28,6 +28,7 @@ document.onkeyup = function (event) {
         if (userGuess != computerGuess) {
             numGuesses--;
             document.querySelector("#guest").textContent = numGuesses;
+            document.querySelector("#cguesses").textContent = guessChoices;
             guessChoices.push(userGuess);
             
         }
@@ -37,8 +38,11 @@ document.onkeyup = function (event) {
             numGuesses = 9;
             losses++;
             guessChoices = [];
+            //document.querySelector("#cguesses").textContent = guessChoices;
             document.querySelector("#loser").textContent = losses;
-            document.querySelector("#cguesses").textContent = guessChoices;
+
+            
+            
         
             computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
             console.log(computerGuess);
